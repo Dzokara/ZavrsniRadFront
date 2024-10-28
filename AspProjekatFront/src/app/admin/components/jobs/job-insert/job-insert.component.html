@@ -1,0 +1,58 @@
+<div class="job-form-container mb-5">
+    <h2>Insert Job</h2>
+    <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="position">Position</label>
+        <select id="position" formControlName="position">
+          <option *ngFor="let pos of positions" [value]="pos.id">{{ pos.name }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="company">Company</label>
+        <select id="company" formControlName="company">
+          <option *ngFor="let comp of companies" [value]="comp.id">{{ comp.name }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="region">Region</label>
+        <select id="region" formControlName="region">
+          <option *ngFor="let reg of regions" [value]="reg.id">{{ reg.name }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="type">Type</label>
+        <select id="type" formControlName="type">
+          <option *ngFor="let t of types" [value]="t.id">{{ t.name }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="salary">Salary</label>
+        <input id="salary" formControlName="salary" type="number">
+      </div>
+      <div>
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description"></textarea>
+      </div>
+      <div>
+        <label for="remote">Remote</label>
+        <select id="remote" formControlName="remote">
+          <option *ngFor="let r of remoteOptions" [value]="r.id">{{ r.name }}</option>
+        </select>
+      </div>
+      <div>
+        <input type="hidden" formControlName="BenefitIds" value="1">
+      </div>
+      <div>
+        <input type="hidden" formControlName="CategoryIds" value="1">
+      </div>
+      <div>
+        <input type="hidden" formControlName="TechnologyIds" value="1">
+      </div>
+      <div>
+        <label for="deadline">Deadline</label>
+        <input id="deadline" formControlName="deadline" type="date">
+      </div>
+      <button class="mb-5" type="submit">Insert Job</button>
+    </form>
+  </div>
+  

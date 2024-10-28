@@ -1,0 +1,60 @@
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('/assets/images/hero_1.jpg');" id="home-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1 class="text-white font-weight-bold">Sign Up</h1>
+        <div class="custom-breadcrumbs">
+          <a routerLink="/home">Home</a> <span class="mx-2 slash">/</span>
+          <span class="text-white"><strong>Sign Up</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="site-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 mb-5">
+        <h2 class="mb-4 text-center">Sign Up To JobBoard</h2>
+        <form [formGroup]="signupForm" (ngSubmit)="onSignup()" class="p-4 border rounded">
+            <div class="form-group text-center">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Email" formControlName="email">
+                    <mat-error *ngIf="emailControl?.hasError('required')">Email is required</mat-error>
+                    <mat-error *ngIf="emailControl?.hasError('email')">Invalid email</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group text-center">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Username" formControlName="username">
+                    <mat-error *ngIf="usernameControl?.hasError('required')">Username is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group text-center">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="First Name" formControlName="firstName">
+                    <mat-error *ngIf="firstNameControl?.hasError('required')">First Name is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group text-center">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Last Name" formControlName="lastName">
+                    <mat-error *ngIf="lastNameControl?.hasError('required')">Last Name is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group text-center">
+                <mat-form-field class="full-width">
+                    <input matInput type="password" placeholder="Password" formControlName="password">
+                    <mat-error *ngIf="passwordControl?.hasError('required')">Password is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group text-center">
+                <button mat-raised-button color="primary" [disabled]="signupForm.invalid">Sign Up</button>
+            </div>
+        </form>
+    </div>
+    
+    </div>
+  </div>
+</section>

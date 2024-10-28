@@ -1,0 +1,56 @@
+<div class="job-actions text-center">
+    <button class="btn btn-success" routerLink="/admin/insertJob">Insert Job</button>
+  </div>
+  
+  <table class="my-5">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Position</th>
+        <th>Company</th>
+        <th>Technologies</th>
+        <th>Region</th>
+        <th>Type</th>
+        <th>Salary</th>
+        <th>Benefits</th>
+        <th>Categories</th>
+        <th>Deadline</th>
+        <th>Remote</th>
+        <th>Company Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let job of jobs">
+        <td>{{ job.id }}</td>
+        <td>{{ job.position.name }}</td>
+        <td>{{ job.company.name }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let tech of job.technologies">{{ tech.name }}</li>
+          </ul>
+        </td>
+        <td>{{ job.region.name }}</td>
+        <td>{{ job.type.name }}</td>
+        <td>{{ job.salary }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let benefit of job.benefits">{{ benefit.name }}</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li *ngFor="let category of job.categories">{{ category.name }}</li>
+          </ul>
+        </td>
+        <td>{{ job.deadline | date: 'yyyy-MM-dd' }}</td>
+        <td>{{ job.remote.name }}</td>
+        <td><img [src]="'http://localhost:5048/' + job.company.image" alt="{{ job.company.name }}" width="100"></td>
+        <td>
+          <button [routerLink]="'/admin/jobs/' + job.id" class="btn btn-info">Update</button>
+          <button class="btn btn-danger" (click)="deleteJob(job.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

@@ -1,0 +1,71 @@
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('/assets/images/hero_1.jpg');" id="home-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1 class="text-white font-weight-bold">{{blog.title}}</h1>
+        <div class="custom-breadcrumbs">
+          <a href="#">Blogs</a> <span class="mx-2 slash">/</span>
+          <span class="text-white"><strong>Single Blog</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="site-section" id="next-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 blog-content">
+        <h3 class="mb-4">{{ blog.title }}</h3>
+        <p><img [src]="'http://localhost:5048/' + blog.image" alt="Image" class="img-fluid rounded"></p>
+        <p class="lead">{{ blog.description }}</p>
+        
+        <div class="pt-5">
+           <!-- Add Comment Form -->
+           <h4>Add a Comment</h4>
+           <form (ngSubmit)="submitComment()" [formGroup]="commentForm">
+             <div class="form-group">
+               <textarea 
+                 class="form-control" 
+                 formControlName="text" 
+                 rows="3" 
+                 placeholder="Write your comment here"></textarea>
+             </div>
+             <button type="submit" class="btn btn-primary mt-2 mb-5" [disabled]="commentForm.invalid">
+               Submit Comment
+             </button>
+           </form>
+
+
+          <h3 class="mb-5">{{ blog.comments.length }} Comments</h3>
+          <ul class="comment-list">
+            <li class="comment" *ngFor="let comment of blog?.comments">
+              <div class="comment-body">
+                <h3>{{ comment.user.username }}</h3>
+                <p>{{ comment.text }}</p>
+              </div>
+            </li>
+          </ul>
+
+         
+        </div>
+      </div>
+
+      <div class="col-lg-4 sidebar pl-lg-5">
+        <!-- Sidebar content -->
+        <div class="sidebar-box">
+          <form action="#" class="search-form">
+            <div class="form-group">
+              <span class="icon fa fa-search"></span>
+              <input type="text" class="form-control form-control-lg" placeholder="Type a keyword and hit enter">
+            </div>
+          </form>
+        </div>
+        <div class="sidebar-box">
+          <h3>Our blog page</h3>
+          <p>Enjoy, relax, read, and get the latest news!</p>
+          <p><a href="/blog" class="btn btn-primary btn-sm">Read More</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

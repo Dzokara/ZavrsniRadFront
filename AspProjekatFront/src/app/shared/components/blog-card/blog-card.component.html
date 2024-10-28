@@ -1,0 +1,8 @@
+
+<a [routerLink]="'/blog/' + blog.id">
+      <img [src]="'http://localhost:5048/' + blog.image" alt="Image" class="img-fluid rounded mb-4">
+    </a>
+    <h3><a href="blog-single.html" class="text-black">{{ blog.title }}</a></h3>
+    <div>{{ humanizeDate(blog.date) }} <span class="mx-2">|</span> <a href="#">{{ blog.comments.length }} Comments</a></div>
+
+  

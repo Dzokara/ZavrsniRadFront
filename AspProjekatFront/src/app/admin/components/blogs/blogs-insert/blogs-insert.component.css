@@ -1,0 +1,50 @@
+.job-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .job-form-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .job-form-container form {
+    display: grid;
+    gap: 15px;
+  }
+  
+  .job-form-container label {
+    font-weight: bold;
+  }
+  
+  .job-form-container select,
+  .job-form-container input[type="number"],
+  .job-form-container textarea,
+  .job-form-container input[type="date"],
+  .job-form-container input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .job-form-container button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .job-form-container button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  

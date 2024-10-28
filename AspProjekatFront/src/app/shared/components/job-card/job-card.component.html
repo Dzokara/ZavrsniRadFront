@@ -1,0 +1,24 @@
+
+    <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center" >
+      <a [routerLink]="'/jobs/' + job.id"></a>
+      <div class="job-listing-logo">
+        <!-- Assuming job.company.image contains the image file name -->
+        <img [src]="'http://localhost:5048/' + job.company.image" alt="{{ job.company.name }}" class="img-fluid">
+      </div>
+  
+      <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+        <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+          <h2>{{ job.position.name }}</h2>
+          <strong>{{ job.company.name }}</strong>
+        </div>
+        <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+          <span class="icon-room"></span> {{ job.region.name }}
+        </div>
+        <div class="job-listing-meta">
+          <span class="badge" [ngClass]="{'badge-danger': job.type.name === 'Part Time', 'badge-success': job.type.name === 'Full Time', 'badge-info': job.type.name === 'Half Time'}">{{ job.type.name }}</span>
+        </div>
+      </div>
+    </li>
+ 
+
+  

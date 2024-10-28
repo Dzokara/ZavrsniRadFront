@@ -1,0 +1,123 @@
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  .styled-table th,
+  .styled-table td {
+    padding: 12px 15px;
+  }
+  
+  .styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+  
+  .styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+  }
+  .admin-home {
+    padding: 20px;
+  }
+  
+  .welcome-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .welcome-header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+  }
+  
+  .welcome-header p {
+    font-size: 1.2em;
+    color: #666;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    color: #333;
+  }
+  
+  .recent-activities ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .recent-activities ul li {
+    background: #f4f4f4;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .admin-tools .tools {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .admin-tools .tool {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    flex: 1;
+  }
+  
+  .admin-tools .tool h3 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  
+  .admin-tools .tool p {
+    margin: 10px 0 0;
+  }
+  
+  .statistics .stats {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .statistics .stat {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .statistics .stat h3 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  
+  .statistics .stat p {
+    margin: 10px 0 0;
+    font-size: 1.5em;
+    color: #333;
+  }
+  

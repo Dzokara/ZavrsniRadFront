@@ -1,0 +1,19 @@
+<div class="blog-form-container">
+    <h2>Update Blog</h2>
+    <form [formGroup]="blogForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+      <div>
+        <label for="title">Title</label>
+        <input id="title" formControlName="title" type="text">
+      </div>
+      <div>
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description"></textarea>
+      </div>
+      <div>
+        <label for="image">Image</label>
+        <input id="image" type="file" (change)="onFileChange($event)">
+      </div>
+      <button type="submit">Update Blog</button>
+    </form>
+</div>
+  
